@@ -1,6 +1,6 @@
 # Devlog — portfolio & activity journal
 
-Website personal berbahasa Indonesia dengan React/TypeScript/shadcn dan headless CMS Strapi 5. Frontend dan backend adalah dua aplikasi terpisah, dengan struktur fitur mengacu pada empat dokumen yang diberikan.
+Website personal berbahasa Indonesia dengan React/TypeScript/shadcn dan headless CMS Strapi 5. Frontend dan backend adalah dua aplikasi terpisah.
 
 ## Menjalankan lokal
 
