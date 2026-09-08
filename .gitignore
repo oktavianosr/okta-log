@@ -13,3 +13,4 @@ coverage/
 be/public/uploads/*
 !be/public/uploads/.gitkeep
 
+docs/
