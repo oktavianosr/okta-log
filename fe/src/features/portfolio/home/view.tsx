@@ -6,6 +6,7 @@ import DataState from '@/components/fallback/data-state';
 
 import ProfileCard from './components/profile-card';
 import type { HomeViewProps } from './types';
+import { Marquee } from '@/components/ui/marquee';
 export default function HomeView({
     feed,
     profile,
@@ -19,8 +20,10 @@ export default function HomeView({
             <section className="hero">
                 <div>
                     <div className="eyebrow">
-                        <span className="dot" />
-                        PORTOFOLIO & CATATAN PERSONAL
+
+                        <Marquee speed={15} pauseOnHover={false} reverse={false}>
+                            <span className="dot">PORTOFOLIO & CATATAN PERSONAL</span>
+                        </Marquee>
                     </div>
                     <h1>
                         Yang dibangun.

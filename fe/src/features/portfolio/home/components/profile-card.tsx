@@ -18,7 +18,8 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
                 {avatar ? (
                     <img
                         alt={profile.avatar?.alternativeText || profile.name}
-                        src={avatar} draggable="false"
+                        src={avatar}
+                        draggable="false"
                     />
                 ) : (
                     <Asterisk size={32} />
