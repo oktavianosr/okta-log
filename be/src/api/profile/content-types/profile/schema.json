@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "profiles",
+  "info": { "singularName": "profile", "pluralName": "profiles", "displayName": "Profile" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "headline": { "type": "string", "required": true },
+    "bio": { "type": "text" },
+    "location": { "type": "string" },
+    "email": { "type": "email" },
+    "githubUrl": { "type": "string" },
+    "linkedinUrl": { "type": "string" },
+    "skills": { "type": "json" },
+    "avatar": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] }
+  }
+}

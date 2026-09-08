@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+.env
+.env.*
+!.env.example
+.npm-cache/
+.tmp/
+.cache/
+.strapi/
+coverage/
+*.log
+be/public/uploads/*
+!be/public/uploads/.gitkeep
+

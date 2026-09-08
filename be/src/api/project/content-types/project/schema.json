@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": { "singularName": "project", "pluralName": "projects", "displayName": "Project" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title", "required": true, "unique": true },
+    "summary": { "type": "text", "required": true },
+    "body": { "type": "text" },
+    "technologies": { "type": "json" },
+    "category": { "type": "string" },
+    "featured": { "type": "boolean", "default": false },
+    "demoUrl": { "type": "string" },
+    "repositoryUrl": { "type": "string" },
+    "cover": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] },
+    "posts": { "type": "relation", "relation": "oneToMany", "target": "api::post.post", "mappedBy": "project" }
+  }
+}

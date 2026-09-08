@@ -1,0 +1,7 @@
+**/node_modules/
+**/dist/
+**/build/
+**/routeTree.gen.ts
+**/package-lock.json
+.npm-cache/
+docs/references/

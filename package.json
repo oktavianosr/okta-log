@@ -1,0 +1,12 @@
+{
+  "name": "blog-gw",
+  "private": true,
+  "scripts": {
+    "dev:fe": "npm --prefix fe run dev",
+    "dev:be": "npm --prefix be run develop",
+    "build:fe": "npm --prefix fe run build",
+    "build:be": "npm --prefix be run build",
+    "test:fe": "npm --prefix fe test",
+    "lint:fe": "npm --prefix fe run lint"
+  }
+}
