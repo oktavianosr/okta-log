@@ -68,7 +68,8 @@ a {
     background: #dde5ff;
 }
 .shell {
-    max-width: 1240px;
+    width: 100%;
+    max-width: none;
     margin: 0 auto;
     padding: 0 40px;
 }
