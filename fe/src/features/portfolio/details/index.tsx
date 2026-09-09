@@ -11,7 +11,7 @@ export default function ProjectDetail({ slug }: { slug: string }) {
         queryKey: queryKeys.projects.detail(slug),
     });
     usePageMeta(
-        query.data?.data?.title ?? 'Detail proyek',
+        query.data?.data?.title ?? 'Project details',
         query.data?.data?.summary
     );
     return (

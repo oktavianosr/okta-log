@@ -22,13 +22,13 @@ export default function ProjectDetailView({
         <div className="reading">
             <Link className="text-link" to="/projects">
                 <ArrowLeft size={15} />
-                Semua proyek
+                All projects
             </Link>
             <DataState {...state}>
                 {project && (
                     <article>
                         <div className="eyebrow mt-9">
-                            {project.category || 'PROYEK'}
+                            {project.category || 'PROJECT'}
                         </div>
                         <h1>{project.title}</h1>
                         <div className="tag-list">
@@ -47,7 +47,7 @@ export default function ProjectDetailView({
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
-                                        Buka proyek
+                                        View project
                                         <ArrowUpRight size={15} />
                                     </a>
                                 </Button>

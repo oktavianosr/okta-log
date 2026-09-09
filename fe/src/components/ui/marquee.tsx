@@ -1,24 +1,25 @@
 import * as React from 'react';
+
 import { cn } from '@/lib/utils';
 
 interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
-    speed?: number;
     pauseOnHover?: boolean;
-    reverse: boolean;
+    reverse?: boolean;
+    speed?: number;
 }
 
 export function Marquee({
     children,
-    speed = 20,
+    className,
     pauseOnHover = false,
     reverse = false,
-    className,
+    speed = 20,
     ...props
 }: MarqueeProps) {
     return (
         <div
             className={cn(
-                'group flex max-w-full gap-4 overflow-hidden p-2 select-none',
+                'group flex w-1/2  max-w-full overflow-hidden p-2 select-none',
                 className
             )}
             style={{ '--duration': `${speed}s` } as React.CSSProperties}
@@ -26,23 +27,20 @@ export function Marquee({
         >
             <div
                 className={cn(
-                    'animate-marquee flex min-w-full shrink-0 items-center justify-around gap-4',
+                    'animate-marquee flex w-[200%] shrink-0',
                     pauseOnHover && 'group-hover:[animation-play-state:paused]',
                     reverse && '[animation-direction:reverse]'
                 )}
             >
-                {children}
-            </div>
-            {/* Duplicated track for perfect seamless looping */}
-            <div
-                aria-hidden="true"
-                className={cn(
-                    'animate-marquee flex min-w-full shrink-0 items-center justify-around gap-4',
-                    pauseOnHover && 'group-hover:[animation-play-state:paused]',
-                    reverse && '[animation-direction:reverse]'
-                )}
-            >
-                {children}
+                <div className="flex w-1/2 shrink-0 items-center justify-around gap-4">
+                    {children}
+                </div>
+                <div
+                    aria-hidden="true"
+                    className="flex w-1/2 shrink-0 items-center justify-around gap-4"
+                >
+                    {children}
+                </div>
             </div>
         </div>
     );

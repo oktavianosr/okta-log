@@ -60,7 +60,7 @@ export default function ProjectCard({
             <ProjectArtwork index={index} project={project} />
             <div className="project-card-body">
                 <div className="project-category">
-                    {project.category || 'Proyek'}
+                    {project.category || 'Project'}
                 </div>
                 <div className="project-title">
                     <h3>{project.title}</h3>

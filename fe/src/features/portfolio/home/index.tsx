@@ -8,7 +8,7 @@ import { queryKeys } from '@/lib/query-keys';
 
 import HomeView from './view';
 export default function Home() {
-    usePageMeta('Portofolio & Catatan');
+    usePageMeta('Portfolio & Notes');
     const profile = useQuery({
         queryFn: fetchProfile,
         queryKey: queryKeys.profile,

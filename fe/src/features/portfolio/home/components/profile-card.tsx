@@ -18,8 +18,8 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
                 {avatar ? (
                     <img
                         alt={profile.avatar?.alternativeText || profile.name}
-                        src={avatar}
                         draggable="false"
+                        src={avatar}
                     />
                 ) : (
                     <Asterisk size={32} />
@@ -59,7 +59,7 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
                 )}
                 {email && (
                     <a
-                        aria-label="Kirim email"
+                        aria-label="Send email"
                         className="social-link"
                         href={'mailto:' + email}
                     >

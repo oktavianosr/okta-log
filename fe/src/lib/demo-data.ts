@@ -1,32 +1,32 @@
 import type { Post, Profile, Project } from '@/types/content';
 export const demoProfile: Profile = {
-    bio: 'Ruang untuk menceritakan apa yang saya bangun, masalah yang saya pecahkan, dan hal-hal yang saya pelajari di sepanjang jalan.',
+    bio: 'A space to share what I build, the problems I solve, and the lessons I learn along the way.',
     documentId: 'demo-profile',
     headline: 'Developer & problem solver',
     location: 'Indonesia',
-    name: 'Nama Kamu',
+    name: 'Your Name',
     skills: ['React', 'TypeScript', 'Node.js', 'Strapi'],
 };
 export const demoProjects: Project[] = [
     {
-        body: '## Tentang proyek\n\nIni adalah konten contoh. Ganti dengan cerita proyekmu melalui Strapi.\n\n## Pendekatan\n\nPisahkan pengelolaan konten dari antarmuka agar keduanya mudah dikembangkan.',
+        body: '## About this project\n\nThis is sample content. Replace it with your project story through Strapi.\n\n## Approach\n\nKeep content management separate from the interface so both can evolve easily.',
         category: 'Web development',
         documentId: 'demo-project-1',
         featured: true,
-        slug: 'contoh-personal-space',
+        slug: 'sample-personal-space',
         summary:
-            'Satu tempat untuk proyek, eksperimen, dan catatan perjalanan sebagai developer.',
+            'One place for projects, experiments, and notes from a developer journey.',
         technologies: ['React', 'TypeScript', 'Strapi'],
         title: 'Personal Space',
     },
     {
-        body: '## Tentang proyek\n\nIni adalah proyek contoh untuk memperlihatkan halaman detail.\n\nCeritakan konteks, tantangan, dan hasil proyekmu di sini.',
-        category: 'Eksperimen',
+        body: '## About this project\n\nThis sample project demonstrates the detail page.\n\nShare your project context, challenges, and outcomes here.',
+        category: 'Experiment',
         documentId: 'demo-project-2',
         featured: true,
-        slug: 'contoh-issue-board',
+        slug: 'sample-issue-board',
         summary:
-            'Eksplorasi alur pencatatan masalah, prioritas, dan dokumentasi penyelesaian.',
+            'An exploration of issue tracking, prioritization, and solution documentation.',
         technologies: ['React', 'TanStack Query'],
         title: 'Issue Board',
     },
@@ -34,24 +34,24 @@ export const demoProjects: Project[] = [
 export const demoPosts: Post[] = [
     {
         activityDate: '2026-09-07T09:00:00Z',
-        body: '## Masalah\n\nKonten ini adalah contoh catatan penyelesaian masalah.\n\nSetelah menyimpan perubahan, halaman masih menampilkan data sebelumnya.\n\n## Penyelesaian\n\nInvalidasi query yang berkaitan setelah mutasi berhasil.\n\n## Yang dipelajari\n\nData server sebaiknya memiliki satu sumber cache yang konsisten.',
+        body: '## Problem\n\nThis is a sample problem-solving note.\n\nAfter saving a change, the page still showed the previous data.\n\n## Solution\n\nInvalidate related queries after a successful mutation.\n\n## Lesson\n\nServer data should have one consistent cache source.',
         documentId: 'demo-post-1',
         excerpt:
-            'Menelusuri cache yang tertinggal dan memastikan UI ikut berubah setelah mutasi.',
+            'Tracing stale cache data and ensuring the UI updates after a mutation.',
         kind: 'solution',
         project: demoProjects[0],
-        slug: 'contoh-cache-invalidation',
+        slug: 'sample-cache-invalidation',
         tags: [{ documentId: 'demo-tag-1', name: 'React', slug: 'react' }],
-        title: 'Saat data sudah berubah, tapi tampilan belum',
+        title: 'When the data changed but the UI did not',
     },
     {
         activityDate: '2026-09-05T09:00:00Z',
-        body: '## Satu fitur, tanggung jawab yang jelas\n\nIni adalah tulisan contoh.\n\nLetakkan pengambilan data di index.tsx, lalu kirim props ke view.tsx.\n\n- Logic tetap dapat ditelusuri.\n- UI dapat dikembangkan secara terpisah.',
+        body: '## One feature, clear responsibilities\n\nThis is a sample article.\n\nKeep data fetching in index.tsx, then pass props to view.tsx.\n\n- Logic remains easy to trace.\n- The UI can evolve independently.',
         documentId: 'demo-post-2',
         excerpt:
-            'Catatan tentang index.tsx, view.tsx, dan batas tanggung jawab yang lebih mudah dibaca.',
+            'Notes on index.tsx, view.tsx, and clearer responsibility boundaries.',
         kind: 'article',
-        slug: 'contoh-feature-pattern',
+        slug: 'sample-feature-pattern',
         tags: [
             {
                 documentId: 'demo-tag-2',
@@ -59,17 +59,17 @@ export const demoPosts: Post[] = [
                 slug: 'typescript',
             },
         ],
-        title: 'Memisahkan logic dan UI dalam satu fitur',
+        title: 'Separating logic and UI within one feature',
     },
     {
         activityDate: '2026-09-03T09:00:00Z',
-        body: 'Ini adalah activity update contoh.\n\nCatatan tidak selalu harus panjang. Simpan konteks yang akan berguna saat kamu kembali menghadapi masalah serupa.',
+        body: 'This is a sample activity update.\n\nNotes do not always need to be long. Keep the context that will help when you encounter a similar problem again.',
         documentId: 'demo-post-3',
         excerpt:
-            'Sebuah ruang kecil untuk menyimpan keputusan, percobaan, dan pelajaran dari pekerjaan sehari-hari.',
+            'A small space for decisions, experiments, and lessons from everyday work.',
         kind: 'update',
-        slug: 'contoh-mulai-mencatat',
+        slug: 'sample-start-taking-notes',
         tags: [],
-        title: 'Mulai mencatat proses, bukan hanya hasil',
+        title: 'Start documenting the process, not only the outcome',
     },
 ];

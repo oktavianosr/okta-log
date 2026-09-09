@@ -20,7 +20,7 @@ export default function PostDetailView({
         <div className="reading">
             <Link className="text-link" to="/posts">
                 <ArrowLeft size={15} />
-                Semua catatan
+                All notes
             </Link>
             <DataState {...state}>
                 {post && (
@@ -34,7 +34,7 @@ export default function PostDetailView({
                                 {formatDate(post.activityDate, 'long')}
                             </time>
                             <span>·</span>
-                            <span>{readingTime(post.body)} menit baca</span>
+                            <span>{readingTime(post.body)} min read</span>
                         </div>
                         <h1>{post.title}</h1>
                         <p className="reading-lead">{post.excerpt}</p>
@@ -59,7 +59,7 @@ export default function PostDetailView({
                                 params={{ slug: post.project.slug }}
                                 to="/projects/$slug"
                             >
-                                <span>PROYEK TERKAIT</span>
+                                <span>RELATED PROJECT</span>
                                 <div className="flex justify-between gap-4">
                                     {post.project.title}
                                     <ArrowUpRight size={17} />

@@ -11,7 +11,7 @@ export default function PostDetail({ slug }: { slug: string }) {
         queryKey: queryKeys.posts.detail(slug),
     });
     usePageMeta(
-        query.data?.data?.title ?? 'Detail catatan',
+        query.data?.data?.title ?? 'Note details',
         query.data?.data?.excerpt
     );
     return (

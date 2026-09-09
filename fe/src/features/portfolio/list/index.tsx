@@ -9,8 +9,8 @@ import { projectSearchSchema } from './schema';
 import ProjectListView from './view';
 export default function ProjectList() {
     usePageMeta(
-        'Proyek',
-        'Kumpulan proyek, eksperimen, dan cerita di balik pembuatannya.'
+        'Projects',
+        'A collection of projects, experiments, and the stories behind them.'
     );
     const { page } = projectSearchSchema.parse(useSearch({ strict: false }));
     const navigate = useNavigate();

@@ -15,8 +15,8 @@ export interface DataStateProps {
 export default function DataState({
     children,
     empty,
-    emptyDescription = 'Catatan berikutnya akan muncul di sini.',
-    emptyTitle = 'Belum ada konten',
+    emptyDescription = 'The next note will appear here.',
+    emptyTitle = 'No content yet',
     error,
     loading,
     onRetry,
@@ -24,7 +24,7 @@ export default function DataState({
     if (loading)
         return (
             <div
-                aria-label="Memuat konten"
+                aria-label="Loading content"
                 className="space-y-4 py-5"
                 role="status"
             >
@@ -36,14 +36,14 @@ export default function DataState({
     if (error)
         return (
             <div className="empty-state" role="alert">
-                <h3>Konten belum bisa dimuat</h3>
+                <h3>Content could not be loaded</h3>
                 <p>
-                    Koneksi ke sumber konten sedang bermasalah. Silakan coba
-                    lagi.
+                    There is a problem connecting to the content source. Please
+                    try again.
                 </p>
                 <Button onClick={onRetry} size="sm" variant="outline">
                     <RefreshCw size={14} />
-                    Coba lagi
+                    Try again
                 </Button>
             </div>
         );

@@ -13,7 +13,7 @@ export default function Pagination({
 }) {
     if (!meta || (meta.pageCount <= 1 && meta.page === 1)) return null;
     return (
-        <nav aria-label="Halaman hasil" className="pagination">
+        <nav aria-label="Result pages" className="pagination">
             <Button
                 disabled={disabled || meta.page <= 1}
                 onClick={() => onPage(meta.page - 1)}
@@ -21,10 +21,10 @@ export default function Pagination({
                 variant="outline"
             >
                 <ArrowLeft size={14} />
-                Sebelumnya
+                Previous
             </Button>
             <span>
-                Halaman {meta.page} dari {Math.max(meta.pageCount, 1)}
+                Page {meta.page} of {Math.max(meta.pageCount, 1)}
             </span>
             <Button
                 disabled={disabled || meta.page >= meta.pageCount}
@@ -32,7 +32,7 @@ export default function Pagination({
                 size="sm"
                 variant="outline"
             >
-                Berikutnya
+                Next
                 <ArrowRight size={14} />
             </Button>
         </nav>

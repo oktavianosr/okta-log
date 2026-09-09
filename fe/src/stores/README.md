@@ -1,3 +1,3 @@
 # Client state
 
-Store Zustand hanya ditambahkan bila ada state global lintas fitur. Data CMS di TanStack Query; filter feed di URL; login/editor dikelola admin Strapi.
+Add a Zustand store only when state must be shared across features. CMS data belongs in TanStack Query, feed filters belong in the URL, and authentication and editing are managed by the Strapi admin.

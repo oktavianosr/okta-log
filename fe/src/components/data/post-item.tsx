@@ -4,7 +4,7 @@ import { ArrowUpRight, Check, FileText, Zap } from 'lucide-react';
 import { formatDate, readingTime } from '@/lib/datetime';
 import type { Post, PostKind } from '@/types/content';
 export const kindLabels: Record<PostKind, string> = {
-    article: 'Artikel',
+    article: 'Article',
     solution: 'Problem solved',
     update: 'Update',
 };
@@ -26,7 +26,7 @@ export default function PostItem({ post }: { post: Post }) {
                     {post.kind === 'article' && (
                         <>
                             <span>·</span>
-                            <span>{readingTime(post.body)} menit baca</span>
+                            <span>{readingTime(post.body)} min read</span>
                         </>
                     )}
                 </div>
@@ -45,7 +45,7 @@ export default function PostItem({ post }: { post: Post }) {
                         ))}
                     </div>
                     <Link
-                        aria-label={'Baca ' + post.title}
+                        aria-label={'Read ' + post.title}
                         className="feed-read"
                         params={{ slug: post.slug }}
                         to="/posts/$slug"

@@ -8,9 +8,9 @@ import { Input } from '@/components/ui/input';
 
 import type { PostListViewProps } from './types';
 const filtersList = [
-    { label: 'Semua', value: 'all' },
+    { label: 'All', value: 'all' },
     { label: 'Solved', value: 'solution' },
-    { label: 'Artikel', value: 'article' },
+    { label: 'Articles', value: 'article' },
     { label: 'Update', value: 'update' },
 ] as const;
 export default function PostListView({
@@ -27,26 +27,26 @@ export default function PostListView({
             {compact ? (
                 <div className="section-head">
                     <h2>
-                        Catatan terbaru <span className="section-count">↳</span>
+                        Recent notes <span className="section-count">↳</span>
                     </h2>
                     <Link className="text-link" to="/posts">
-                        Arsip <ArrowRight size={14} />
+                        Archive <ArrowRight size={14} />
                     </Link>
                 </div>
             ) : (
                 <header className="page-header">
-                    <div className="eyebrow">JURNAL / ACTIVITY FEED</div>
-                    <h1>Catatan sepanjang jalan.</h1>
+                    <div className="eyebrow">JOURNAL / ACTIVITY FEED</div>
+                    <h1>Notes along the way.</h1>
                     <p>
-                        Hal yang dikerjakan, masalah yang dipecahkan, dan
-                        pelajaran yang layak disimpan.
+                        Work in progress, problems solved, and lessons worth
+                        keeping.
                     </p>
                 </header>
             )}
             <div className={compact ? '' : 'page-content'}>
                 <div className="feed-toolbar">
                     <div
-                        aria-label="Jenis catatan"
+                        aria-label="Note type"
                         className="filter-tabs"
                         role="group"
                     >
@@ -64,12 +64,12 @@ export default function PostListView({
                     <div className="feed-search">
                         <Search size={14} />
                         <Input
-                            aria-label="Cari catatan"
+                            aria-label="Search notes"
                             maxLength={200}
                             onChange={(event) =>
                                 onFilters({ search: event.target.value })
                             }
-                            placeholder="Cari catatan..."
+                            placeholder="Search notes..."
                             value={filters.search}
                         />
                     </div>
@@ -80,13 +80,13 @@ export default function PostListView({
                         empty={posts.length === 0}
                         emptyDescription={
                             filters.search || filters.kind !== 'all'
-                                ? 'Coba kata kunci lain atau pilih jenis Semua.'
-                                : 'Catatan yang sudah dipublikasikan akan muncul di sini.'
+                                ? 'Try another keyword or select All.'
+                                : 'Published notes will appear here.'
                         }
                         emptyTitle={
                             filters.search || filters.kind !== 'all'
-                                ? 'Tidak ada catatan yang cocok'
-                                : 'Belum ada catatan'
+                                ? 'No matching notes'
+                                : 'No notes yet'
                         }
                     >
                         <div>

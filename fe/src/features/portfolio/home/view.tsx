@@ -3,10 +3,10 @@ import { ArrowRight, Asterisk } from 'lucide-react';
 
 import ProjectCard from '@/components/data/project-card';
 import DataState from '@/components/fallback/data-state';
+import { Marquee } from '@/components/ui/marquee';
 
 import ProfileCard from './components/profile-card';
 import type { HomeViewProps } from './types';
-import { Marquee } from '@/components/ui/marquee';
 export default function HomeView({
     feed,
     profile,
@@ -20,20 +20,19 @@ export default function HomeView({
             <section className="hero">
                 <div>
                     <div className="eyebrow">
-
-                        <Marquee speed={15} pauseOnHover={false} reverse={false}>
-                            <span className="dot">PORTOFOLIO & CATATAN PERSONAL</span>
+                        <Marquee pauseOnHover reverse={false}>
+                            <span className="text-xl font-bold mx-4 w-full">PORTOFOLIO & PERSONAL NOTES</span>
                         </Marquee>
                     </div>
                     <h1>
-                        Yang dibangun.
+                        What I’ve built.
                         <br />
-                        <span>Yang dipelajari.</span>
+                        <span>What I've learned</span>
                     </h1>
                     <p>
-                        Proyek, eksperimen, dan cerita di balik penyelesaian
-                        masalah. Mendokumentasikan perjalanan, satu catatan
-                        setiap waktu.
+                        Projects, experiments, and the stories behind solving
+                        problems. Documenting the journey, one entry
+                        at a time.
                     </p>
                 </div>
                 <div aria-hidden="true" className="hero-art">
@@ -46,12 +45,12 @@ export default function HomeView({
                 </div>
             </section>
             <div className="content-grid">
-                <aside aria-label="Tentang penulis" className="profile">
+                <aside aria-label="About the author" className="profile">
                     <DataState
                         {...profileState}
                         empty={!profile}
-                        emptyDescription="Profil penulis akan tampil setelah dipublikasikan."
-                        emptyTitle="Profil belum tersedia"
+                        emptyDescription="The author profile will appear once published."
+                        emptyTitle="Profile unavailable"
                     >
                         {profile && <ProfileCard profile={profile} />}
                     </DataState>
@@ -60,7 +59,7 @@ export default function HomeView({
                     <section aria-labelledby="projects-heading">
                         <div className="section-head">
                             <h2 id="projects-heading">
-                                Proyek pilihan{' '}
+                                Selected Project{' '}
                                 <span className="section-count">
                                     {projects.length
                                         .toString()
@@ -68,7 +67,7 @@ export default function HomeView({
                                 </span>
                             </h2>
                             <Link className="text-link" to="/projects">
-                                Semua proyek <ArrowRight size={14} />
+                                All projects <ArrowRight size={14} />
                                 <span className="sr-only">
                                     ({projectTotal})
                                 </span>
@@ -77,7 +76,7 @@ export default function HomeView({
                         <DataState
                             {...projectState}
                             empty={projects.length === 0}
-                            emptyTitle="Proyek pilihan belum tersedia"
+                            emptyTitle="Selected projects unavailable"
                         >
                             <div className="project-grid">
                                 {projects.map((project, index) => (

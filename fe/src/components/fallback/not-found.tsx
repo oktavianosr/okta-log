@@ -5,15 +5,15 @@ import { Button } from '@/components/ui/button';
 export default function NotFound() {
     return (
         <div className="reading">
-            <div className="eyebrow">404 / HALAMAN TIDAK DITEMUKAN</div>
-            <h1>Sepertinya jalan buntu.</h1>
+            <div className="eyebrow">404 / PAGE NOT FOUND</div>
+            <h1>Looks like a dead end.</h1>
             <p className="reading-lead">
-                Halaman ini belum tersedia atau sudah dipindahkan.
+                This page is unavailable or has moved.
             </p>
             <Button asChild>
                 <Link to="/">
                     <ArrowLeft size={16} />
-                    Kembali ke beranda
+                    Back to home
                 </Link>
             </Button>
         </div>

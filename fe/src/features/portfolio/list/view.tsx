@@ -14,22 +14,22 @@ export default function ProjectListView({
         <>
             <header className="page-header">
                 <div className="eyebrow">PORTOFOLIO / SELECTED WORK</div>
-                <h1>Dari ide menjadi nyata.</h1>
+                <h1>From idea to reality</h1>
                 <p>
-                    Kumpulan proyek dan eksperimen. Setiap karya menyimpan
-                    proses, keputusan, dan pelajarannya sendiri.
+                    A collection of projects and experiments. Each piece embodies
+                    its own process, decisions, and lessons.
                 </p>
             </header>
             <section
                 aria-busy={fetching}
-                aria-label="Daftar proyek"
+                aria-label="Project list"
                 className="page-content"
             >
                 <DataState
                     {...state}
                     empty={projects.length === 0}
-                    emptyDescription="Proyek yang telah dipublikasikan akan tampil di sini."
-                    emptyTitle="Belum ada proyek"
+                    emptyDescription="Published projects will appear here."
+                    emptyTitle="No projects yet"
                 >
                     <div className="project-grid">
                         {projects.map((project, index) => (

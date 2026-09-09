@@ -1,8 +1,8 @@
 export function formatDate(value: string, style: 'long' | 'short' = 'short') {
     const date = new Date(value);
     return Number.isNaN(date.getTime())
-        ? 'Tanggal belum tersedia'
-        : new Intl.DateTimeFormat('id-ID', {
+        ? 'Date unavailable'
+        : new Intl.DateTimeFormat('en-US', {
               day: 'numeric',
               month: style,
               timeZone: 'Asia/Jakarta',
