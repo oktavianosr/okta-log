@@ -1,7 +1,9 @@
 import { validateStringArray } from '../../../../utils/validate-string-array';
 
 function validate({ params }: { params: { data: Record<string, unknown> } }) {
-  validateStringArray(params.data.skills, 'skills');
+  if (params.data.skills !== undefined) {
+    params.data.skills = validateStringArray(params.data.skills, 'skills');
+  }
 }
 
 export default { beforeCreate: validate, beforeUpdate: validate };
