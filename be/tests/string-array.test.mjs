@@ -10,6 +10,13 @@ test('optional JSON string arrays accept valid values without mutation', () => {
   }
 });
 
+test('normalizes a JSON array string from the admin editor', () => {
+  assert.deepEqual(
+    validateStringArray('["React", "TypeScript"]', 'technologies'),
+    ['React', 'TypeScript'],
+  );
+});
+
 test('malformed JSON string arrays fail with a CMS validation error', () => {
   for (const field of ['skills', 'technologies']) {
     for (const value of ['React', '{"name":"React"}', {}, 42, false, ['React', 42], [null], [[]]]) {
