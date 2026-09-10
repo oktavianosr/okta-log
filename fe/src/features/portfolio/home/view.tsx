@@ -21,7 +21,7 @@ export default function HomeView({
                 <div>
                     <div className="eyebrow">
                         <Marquee pauseOnHover reverse={false}>
-                            <span className="mx-4 w-full text-xl font-bold">
+                            <span className="mx-4 w-1/2 text-xl font-bold">
                                 PORTOFOLIO & PERSONAL NOTES
                             </span>
                         </Marquee>
