@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-
 import { Link, Outlet, useRouterState } from '@tanstack/react-router';
 import { Asterisk } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
+import Footer from '@/components/layouts/footer';
 import { isDemo } from '@/lib/axios';
 export default function AppLayout() {
     const pathname = useRouterState({
@@ -59,12 +59,7 @@ export default function AppLayout() {
             <main className="shell" id="main-content" tabIndex={-1}>
                 <Outlet />
             </main>
-            <footer className="footer">
-                <div className="shell footer-inner">
-                    <span>© {new Date().getFullYear()} Devlog</span>
-                    <span>Every process has a story.</span>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }
