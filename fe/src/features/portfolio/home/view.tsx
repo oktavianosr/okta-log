@@ -21,7 +21,9 @@ export default function HomeView({
                 <div>
                     <div className="eyebrow">
                         <Marquee pauseOnHover reverse={false}>
-                            <span className="text-xl font-bold mx-4 w-full">PORTOFOLIO & PERSONAL NOTES</span>
+                            <span className="mx-4 w-full text-xl font-bold">
+                                PORTOFOLIO & PERSONAL NOTES
+                            </span>
                         </Marquee>
                     </div>
                     <h1>
@@ -31,8 +33,7 @@ export default function HomeView({
                     </h1>
                     <p>
                         Projects, experiments, and the stories behind solving
-                        problems. Documenting the journey, one entry
-                        at a time.
+                        problems. Documenting the journey, one entry at a time.
                     </p>
                 </div>
                 <div aria-hidden="true" className="hero-art">

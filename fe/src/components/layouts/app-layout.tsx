@@ -1,10 +1,37 @@
-import { Link, Outlet } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
+
+import { Link, Outlet, useRouterState } from '@tanstack/react-router';
 import { Asterisk } from 'lucide-react';
 
 import { isDemo } from '@/lib/axios';
 export default function AppLayout() {
+    const pathname = useRouterState({
+        select: (state) => state.location.pathname,
+    });
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 16);
+        };
+
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const isNotHomePage =
+        pathname !== '/' || pathname.startsWith('/?');
+    const showNavbarGlass = isScrolled;
+
     return (
-        <>
+        <div
+            className={isNotHomePage ? 'app-shell home-page' : 'app-shell'}
+        >
             <a className="skip-link" href="#main-content">
                 Skip to content
             </a>
@@ -15,7 +42,9 @@ export default function AppLayout() {
                 </div>
             )}
             <header className="topbar">
-                <div className="shell nav">
+                <div
+                    className={`shell nav ${showNavbarGlass ? 'navbar--sticky' : ''}`}
+                >
                     <Link aria-label="Devlog, home" className="brand" to="/">
                         <Asterisk strokeWidth={2.5} />
                         OktaLog<span className="text-primary">.</span>
@@ -39,6 +68,6 @@ export default function AppLayout() {
                     <span>Every process has a story.</span>
                 </div>
             </footer>
-        </>
+        </div>
     );
 }
