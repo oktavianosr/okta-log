@@ -37,12 +37,13 @@ export default function HomeView({
                     </p>
                 </div>
                 <div aria-hidden="true" className="hero-art">
-                    <div className="orbit" />
+                    {/* <div className="orbit" />
                     <div className="orbit two" />
                     <div className="core-mark">
                         <Asterisk size={65} strokeWidth={1.8} />
-                    </div>
-                    <span className="art-label">a work in progress ↗</span>
+                    </div> */}
+                    <img alt="Closing Tag" draggable="false" src="/assets/end-of-block.png"/>
+                    <span className="art-label">ever-evolving ↗</span>
                 </div>
             </section>
             <div className="content-grid">
