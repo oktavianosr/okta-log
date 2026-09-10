@@ -23,7 +23,10 @@ export default function PostListView({
     ...state
 }: PostListViewProps) {
     return (
-        <section aria-label="Activity feed" className={compact ? 'feed-panel' : undefined}>
+        <section
+            aria-label="Activity feed"
+            className={compact ? 'feed-panel' : undefined}
+        >
             {compact ? (
                 <div className="section-head">
                     <h2>

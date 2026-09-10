@@ -24,14 +24,11 @@ export default function AppLayout() {
         };
     }, []);
 
-    const isNotHomePage =
-        pathname !== '/' || pathname.startsWith('/?');
+    const isNotHomePage = pathname !== '/' || pathname.startsWith('/?');
     const showNavbarGlass = isScrolled;
 
     return (
-        <div
-            className={isNotHomePage ? 'app-shell home-page' : 'app-shell'}
-        >
+        <div className={isNotHomePage ? 'app-shell home-page' : 'app-shell'}>
             <a className="skip-link" href="#main-content">
                 Skip to content
             </a>

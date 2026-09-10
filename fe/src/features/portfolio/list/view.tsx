@@ -16,8 +16,8 @@ export default function ProjectListView({
                 <div className="eyebrow">PORTOFOLIO / SELECTED WORK</div>
                 <h1>From idea to reality</h1>
                 <p>
-                    A collection of projects and experiments. Each piece embodies
-                    its own process, decisions, and lessons.
+                    A collection of projects and experiments. Each piece
+                    embodies its own process, decisions, and lessons.
                 </p>
             </header>
             <section

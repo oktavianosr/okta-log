@@ -19,7 +19,7 @@ export function Marquee({
     return (
         <div
             className={cn(
-                'group flex w-1/2  max-w-full overflow-hidden p-2 select-none',
+                'group flex w-1/2 max-w-full overflow-hidden p-2 select-none',
                 className
             )}
             style={{ '--duration': `${speed}s` } as React.CSSProperties}
