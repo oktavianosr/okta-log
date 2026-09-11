@@ -23,9 +23,14 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="shell footer-inner">
-                <section aria-labelledby="footer-cta-title" className="footer-cta-panel">
+                <section
+                    aria-labelledby="footer-cta-title"
+                    className="footer-cta-panel"
+                >
                     <div>
-                        <p className="footer-kicker">AVAILABLE FOR COLLABORATION</p>
+                        <p className="footer-kicker">
+                            AVAILABLE FOR COLLABORATION
+                        </p>
                         <h2 id="footer-cta-title">
                             Have a thoughtful project in mind?
                         </h2>
@@ -49,8 +54,7 @@ export default function Footer() {
                     <section className="footer-brand">
                         <p className="footer-identity">{name}</p>
                         <p className="footer-headline">
-                            {profile?.headline ||
-                                'A personal development log.'}
+                            {profile?.headline || 'A personal development log.'}
                         </p>
                         {profile?.location && (
                             <p className="footer-location">
@@ -58,7 +62,9 @@ export default function Footer() {
                                 {profile.location}
                             </p>
                         )}
-                        <p className="footer-manifesto">BUILD / LEARN / SHARE</p>
+                        <p className="footer-manifesto">
+                            BUILD / LEARN / SHARE
+                        </p>
                     </section>
 
                     <nav aria-label="Portfolio" className="footer-column">
@@ -81,14 +87,22 @@ export default function Footer() {
                             </Link>
                             <Link
                                 className="footer-link"
-                                search={{ kind: 'article', page: 1, search: '' }}
+                                search={{
+                                    kind: 'article',
+                                    page: 1,
+                                    search: '',
+                                }}
                                 to="/posts"
                             >
                                 Articles
                             </Link>
                             <Link
                                 className="footer-link"
-                                search={{ kind: 'solution', page: 1, search: '' }}
+                                search={{
+                                    kind: 'solution',
+                                    page: 1,
+                                    search: '',
+                                }}
                                 to="/posts"
                             >
                                 Solutions
@@ -139,7 +153,9 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-signature">
-                    <span>© {new Date().getFullYear()} {name}</span>
+                    <span>
+                        © {new Date().getFullYear()} {name}
+                    </span>
                     <span>Built with React, TypeScript &amp; Strapi</span>
                     <span>Every process has a story.</span>
                 </div>

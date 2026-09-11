@@ -303,7 +303,7 @@ a {
     aspect-ratio: 1;
     border: 1px solid var(--glass-border);
     border-radius: 40px;
-     backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     background: var(--accent-surface);
     display: grid;
     place-items: center;
@@ -532,7 +532,7 @@ a {
 .feed-panel {
     margin-bottom: 40px;
     padding: 28px;
-     backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     border-radius: var(--glass-radius);
     min-width: 0;
 }
