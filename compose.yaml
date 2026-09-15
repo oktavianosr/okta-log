@@ -1,0 +1,38 @@
+services:
+  backend:
+    build:
+      context: ./be
+      target: production
+    restart: unless-stopped
+    env_file:
+      - ./be/.env
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 1337
+      DATABASE_CLIENT: sqlite
+      DATABASE_FILENAME: .tmp/data.db
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080}
+    ports:
+      - "${BACKEND_PORT:-1337}:1337"
+    volumes:
+      - backend_data:/app/.tmp
+      - backend_uploads:/app/public/uploads
+
+  frontend:
+    build:
+      context: ./fe
+      target: production
+      args:
+        VITE_CMS_URL: ${VITE_CMS_URL:-http://localhost:1337}
+        VITE_DEMO_MODE: ${VITE_DEMO_MODE:-false}
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+
+volumes:
+  backend_data:
+  backend_uploads:
+

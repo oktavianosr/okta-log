@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      target: development
+    restart: "no"
+    environment:
+      NODE_ENV: development
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173}
+    volumes:
+      - ./be:/app
+      - backend_node_modules:/app/node_modules
+      - backend_data:/app/.tmp
+      - backend_uploads:/app/public/uploads
+
+  frontend:
+    build:
+      target: development
+    restart: "no"
+    environment:
+      VITE_CMS_URL: ${VITE_CMS_URL:-http://localhost:1337}
+      VITE_DEMO_MODE: ${VITE_DEMO_MODE:-false}
+    ports: !override
+      - "${DEV_FRONTEND_PORT:-5173}:5173"
+    volumes:
+      - ./fe:/app
+      - frontend_node_modules:/app/node_modules
+
+volumes:
+  backend_node_modules:
+  frontend_node_modules:
+
