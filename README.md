@@ -28,6 +28,35 @@ npm --prefix fe run dev
 - Admin CMS: http://127.0.0.1:1337/admin
 - REST API: http://127.0.0.1:1337/api
 
+### Development dengan Docker
+
+Siapkan secret backend satu kali, lalu jalankan Compose dengan konfigurasi development:
+
+```sh
+npm --prefix be run setup:env
+docker compose -f compose.yaml -f compose.dev.yaml up --build
+```
+
+- Website: http://localhost:5173
+- Admin CMS: http://localhost:1337/admin
+- REST API: http://localhost:1337/api
+
+Source `fe` dan `be` di-mount ke container sehingga Vite dan Strapi melakukan reload saat file berubah. Database SQLite, upload, dan `node_modules` container disimpan dalam named volume.
+
+### Menjalankan image production
+
+```sh
+npm --prefix be run setup:env
+docker compose up --build -d
+```
+
+- Website: http://localhost:8080
+- Admin CMS: http://localhost:1337/admin
+
+Salin `.env.example` root menjadi `.env` untuk mengganti port, URL publik CMS, demo mode, atau origin CORS. `VITE_CMS_URL` harus merupakan URL yang dapat diakses browser dan ditanam ke frontend ketika image dibangun. Secret Strapi tetap berada di `be/.env` dan tidak disalin ke image.
+
+Hentikan stack dengan `docker compose down`. Jangan gunakan opsi `--volumes` jika database dan upload masih diperlukan.
+
 Buka admin dan buat akun administrator pertama sendiri. Aplikasi tidak membuat akun atau password bawaan. `setup:env` menghasilkan secret acak tanpa mencetak nilainya dan tidak menimpa `.env` yang sudah ada.
 
 Jika shim `npm` PowerShell di mesin ini gagal menemukan `npm-cli.js`, gunakan `npm.cmd`, atau panggil npm langsung:
