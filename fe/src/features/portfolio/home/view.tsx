@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, Asterisk } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 import ProjectCard from '@/components/data/project-card';
 import DataState from '@/components/fallback/data-state';
